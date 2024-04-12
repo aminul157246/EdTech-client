@@ -10,7 +10,7 @@ const Google = () => {
     const handleGoogleLogin = () => {
         signInWithGoogle()
         .then(res => {
-            console.log(res.user);
+            // console.log(res.user);
             toast.success("Good job!", "Sign in with Google done!", "success");
         })
         .catch(err => {

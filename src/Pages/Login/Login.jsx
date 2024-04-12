@@ -12,7 +12,6 @@ const Login = () => {
     console.log(location.pathname);
 
     const {login} = useContext(AuthContext)
-console.log(login);
     const navigate = useNavigate()
 
     
