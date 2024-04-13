@@ -2,31 +2,29 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import { useContext, useEffect, useState } from "react";
 import axios from "axios";
-// import logo from '../../src/assets/images/logo.png'
+import logo from '../../src/assets/ed-tech.png'
 
 
 const Navbar = () => {
 
 
 
-  
+
   const { user, logOut } = useContext(AuthContext)
 
-
-
+  // data fetch 
   const [carts, setCart] = useState([])
 
   useEffect(() => {
-      axios.get(`http://localhost:3000/carts?email=${user?.email}`)
-          .then(res => {
-              setCart(res.data);
-              // console.log(res.data); // Make sure this logs the expected data
-          })
-          .catch(error => {
-              console.error('Error fetching data:', error);
-          });
-  }, [user?.email]); // Empty d
-
+    axios.get(`http://localhost:3000/carts?email=${user?.email}`)
+      .then(res => {
+        setCart(res.data);
+        // console.log(res.data); 
+      })
+      .catch(error => {
+        console.error('Error fetching data:', error);
+      });
+  }, [user?.email]);
 
 
 
@@ -39,34 +37,43 @@ const Navbar = () => {
         isPending ? "pending" : isActive ? "font-bold" : ""}
         style={{ background: 'none' }} to={"/"}>Home</NavLink>
     </li>
-    
+
     <li>
       <NavLink className={({ isActive, isPending }) =>
         isPending ? "pending" : isActive ? "font-bold" : ""}
         style={{ background: 'none' }} to={"/product"}>Products</NavLink>
-  <div className=" font-bold text-red-500 p-4  ml-12 -mt-[55px]">
-  <button >+{carts.length}</button>
-  </div>
+      <div className=" font-bold text-red-500 p-4  ml-12 -mt-[55px]">
+        <button >+{carts.length}</button>
+      </div>
     </li>
-    
-    
+
+
     <li>
       <NavLink className={({ isActive, isPending }) =>
         isPending ? "pending" : isActive ? "font-bold" : ""}
         style={{ background: 'none' }} to={"/payment"}>Payment</NavLink>
     </li>
-   
+
     <li>
       <NavLink className={({ isActive, isPending }) =>
-        isPending ? "pending" : isActive ? "font-bold" : ""}
+        isPending ? "pending" : isActive ? "font-bold " : ""}
         to={'/contact'}
         style={{ background: 'none' }}>Contact Us</NavLink>
     </li>
 
     <li>
-      <NavLink className={({ isActive, isPending }) =>
-        isPending ? "pending" : isActive ? "font-bold" : ""}
-        style={{ background: 'none' }} to={"/login"}>Login </NavLink>
+      {
+        user ?
+
+          <NavLink className={({ isActive, isPending }) =>
+            isPending ? "pending" : isActive ? "  " : ""}
+            onClick={logOut}
+            style={{ background: 'none' }}>Log Out</NavLink>
+          :
+          <NavLink onClick={logOut} className={({ isActive, isPending }) =>
+            isPending ? "pending" : isActive ? "font-bold " : ""}
+            style={{ background: 'none' }} to={"/login"}>Login </NavLink>
+      }
     </li>
 
   </>
@@ -99,7 +106,7 @@ const Navbar = () => {
               {navItems}
             </ul>
           </div>
-          {/* <a className="normal-case text-xl"><img src={logo} alt="" /></a> */}
+          <a className="normal-case text-xl"><img className='w-24' src={logo} alt="" /></a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
@@ -115,7 +122,7 @@ const Navbar = () => {
                 </div>
               </label>
               <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-               
+
                 <li>
                   <button className="btn btn-sm  btn-ghost">{user?.displayName}</button>
 
