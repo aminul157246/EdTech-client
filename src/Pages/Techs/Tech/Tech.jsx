@@ -1,7 +1,6 @@
-import React from 'react';
 import  { useContext } from 'react';
 import Swal from 'sweetalert2';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { AuthContext } from '../../../AuthProvider/AuthProvider';
 const Tech = ({item}) => {
@@ -16,6 +15,7 @@ const Tech = ({item}) => {
 
 const {user} = useContext(AuthContext)
 
+const location = useLocation()
 
 const navigate = useNavigate()
 
@@ -85,12 +85,24 @@ const navigate = useNavigate()
            <div >
 
 
-<div className="card w-96 bg-base-100 shadow-xl">
-    <figure><img src={image} alt="Shoes" /></figure>
+<div className="rounded-xl h-[650px] bg-base-100 shadow-xl">
+    <figure><img src={image} className='h-80 w-full' alt="Shoes" /></figure>
     <div className="card-body">
+    <div className='flex items-center justify-between gap-4'>
+       <div className='bg-gray-200 px-2 py-1 text-sm'>
+       <p >{level}</p>
+       </div>
+        <div className='bg-gray-200 px-2 py-1 text-sm'>
+        <p >{duration}</p>
+        </div>
+       </div>
         <h2 className="card-title">{title}</h2>
         <p>{description}</p>
-        <p>{price}</p>
+        <div className='flex  justify-between my-4'>
+        <div><p>Price : <span className='font-semibold text-lg'>{price} $</span></p></div>
+        <div><p>Instructor : <span className='font-semibold text-lg'>{instructor}</span></p></div>
+        </div>
+       
         <div className="card-actions justify-end">
             <button onClick={handleAddToDatabase} className="btn btn-primary">Add To Cart</button>
         </div>

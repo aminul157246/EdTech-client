@@ -18,6 +18,7 @@ import Payment from './Pages/Payment/Payment';
 import Register from './Pages/Register/Register';
 import AuthProvider from './AuthProvider/AuthProvider';
 import Contact from './Pages/Contact/Contact';
+import PrivateRoute from './PrivateRoute/PrivateRoute';
 
 
 
@@ -32,7 +33,7 @@ const router = createBrowserRouter([
       },
       {
         path : '/product',
-        element : <Products/>
+        element : <PrivateRoute><Products/></PrivateRoute>
       },
       {
         path : '/login',
@@ -66,7 +67,9 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <AuthProvider>
+    <div className='mx-12'>
     <RouterProvider router={router} />
+    </div>
     </AuthProvider>
   </React.StrictMode>,
 )

@@ -29,7 +29,7 @@ const Login = () => {
             console.log(currentUser.user);
             toast.success('Login successfully')
 
-            navigate(location?.state ? location.state : "/")
+            navigate("/")
 
             
         })

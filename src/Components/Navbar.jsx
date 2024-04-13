@@ -1,12 +1,36 @@
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
+import axios from "axios";
 // import logo from '../../src/assets/images/logo.png'
 
 
 const Navbar = () => {
 
+
+
+  
   const { user, logOut } = useContext(AuthContext)
+
+
+
+  const [carts, setCart] = useState([])
+
+  useEffect(() => {
+      axios.get(`http://localhost:3000/carts?email=${user?.email}`)
+          .then(res => {
+              setCart(res.data);
+              // console.log(res.data); // Make sure this logs the expected data
+          })
+          .catch(error => {
+              console.error('Error fetching data:', error);
+          });
+  }, [user?.email]); // Empty d
+
+
+
+
+
 
   const navItems = <>
 
@@ -20,6 +44,9 @@ const Navbar = () => {
       <NavLink className={({ isActive, isPending }) =>
         isPending ? "pending" : isActive ? "font-bold" : ""}
         style={{ background: 'none' }} to={"/product"}>Products</NavLink>
+  <div className=" font-bold text-red-500 p-4  ml-12 -mt-[55px]">
+  <button >+{carts.length}</button>
+  </div>
     </li>
     
     
@@ -84,13 +111,13 @@ const Navbar = () => {
             user ? <div className="dropdown dropdown-end">
               <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                 <div className="w-10 rounded-full">
-                  <img src={user.photoURL} alt='' />
+                  <img src={user?.photoURL} alt='' />
                 </div>
               </label>
               <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
                
                 <li>
-                  <button className="btn btn-sm  btn-ghost">{user.displayName}</button>
+                  <button className="btn btn-sm  btn-ghost">{user?.displayName}</button>
 
                 </li>
                 <li>
