@@ -3,9 +3,6 @@ import bannerImg2 from '../../../assets/edu-tech-2.jpg';
 import bannerImg3 from '../../../assets/edu-tech-3.jpg';
 import bannerImg4 from '../../../assets/edu-tech-4.jpg';
 
-// import Swiper, { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
-// import { Swiper, SwiperSlide } from 'swiper/react';
-
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
