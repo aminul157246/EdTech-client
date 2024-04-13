@@ -15,7 +15,7 @@ const Home = () => {
             <Vision/>
              <Count />
            <Testimonial />
-             {/*<FAQ /> */}
+             <FAQ />
         </div>
     );
 };
