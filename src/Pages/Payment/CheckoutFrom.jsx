@@ -4,13 +4,6 @@ import { AuthContext } from "../../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 
-
-
-
-
-
-
-
 const CheckoutFrom = () => {
 
 
@@ -21,9 +14,6 @@ const CheckoutFrom = () => {
     const elements = useElements();
     // const navigate = useNavigate();
 
-
-
-
     const { user } = useContext(AuthContext)
 
     const [carts, setCart] = useState([])
@@ -32,26 +22,19 @@ const CheckoutFrom = () => {
         axios.get(`http://localhost:3000/carts?email=${user?.email}`)
             .then(res => {
                 setCart(res.data);
-                // console.log(res.data); // Make sure this logs the expected data
             })
             .catch(error => {
                 console.error('Error fetching data:', error);
             });
-    }, [user.email]); // Empty d 
+    }, [user.email]);   
 
-    // console.log(carts);
     const totalPrice = carts.reduce((acc, item) => acc + item?.cartItem?.price, 0);
-    // console.log(totalPrice);
-
-
-
 
 
     useEffect(() => {
         if (totalPrice > 0) {
             axios.post('http://localhost:3000/create-payment-intent', { price: totalPrice })
                 .then(res => {
-                    console.log(res.data.clientSecret);
                     setClientSecret(res.data.clientSecret);
                 })
         }
@@ -141,14 +124,14 @@ const CheckoutFrom = () => {
 
     return (
         <div>
-            <h2 className="text-3xl font-bold text-center mb-12">Total Price  : {totalPrice} </h2>
+            <h2 className="text-3xl font-bold text-center mb-12">Total Price  : {totalPrice} $ </h2>
 
             <form onSubmit={handleSubmit} >
             <CardElement
                 options={{
                     style: {
                         base: {
-                            fontSize: '32px',
+                            fontSize: '18px',
                             color: '#424770',
                             '::placeholder': {
                                 color: '#aab7c4',

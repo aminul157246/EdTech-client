@@ -3,7 +3,23 @@ import Swal from 'sweetalert2';
 import { useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { AuthContext } from '../../../AuthProvider/AuthProvider';
+
+
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
+
+
 const Tech = ({ item }) => {
+
+    useEffect(() => {
+        AOS.init({
+             duration: "1000"
+        });
+
+    }, [])
+
+
 
     const { image, title, description, price, instructor, level, duration } = item
 
@@ -63,7 +79,7 @@ const Tech = ({ item }) => {
 
     return (
         <div>
-            <div >
+            <div data-aos="fade-up">
 
 
                 <div className="rounded-xl lg:h-[650px] bg-base-100 shadow-xl">

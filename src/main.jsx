@@ -16,15 +16,16 @@ import Login from './Pages/Login/Login';
 import Payment from './Pages/Payment/Payment';
 import Register from './Pages/Register/Register';
 import AuthProvider from './AuthProvider/AuthProvider';
-import Contact from './Pages/Contact/Contact';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
 import Home from './Pages/Home/Home';
+import NotFound from './Pages/NotFound';
 
 
 
 const router = createBrowserRouter([
   {
     path: "/",
+    errorElement : <NotFound/>,
     element: <Layout/>,
     children : [
       {
@@ -43,10 +44,7 @@ const router = createBrowserRouter([
         path : '/register',
         element : <Register/>
       },
-      {
-        path : '/contact',
-        element : <Contact/>
-      },
+      
       {
         path : '/payment',
         element : <Payment/>

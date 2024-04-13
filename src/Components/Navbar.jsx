@@ -41,8 +41,8 @@ const Navbar = () => {
     <li>
       <NavLink className={({ isActive, isPending }) =>
         isPending ? "pending" : isActive ? "font-bold" : ""}
-        style={{ background: 'none' }} to={"/product"}>Products</NavLink>
-      <div className=" font-bold text-red-500 p-4  ml-12 -mt-[55px]">
+        style={{ background: 'none' }} to={"/product"}>My Products</NavLink>
+      <div className=" font-bold text-blue-500 p-4  ml-20 -mt-[55px]">
         <button >+{carts.length}</button>
       </div>
     </li>
@@ -54,12 +54,7 @@ const Navbar = () => {
         style={{ background: 'none' }} to={"/payment"}>Payment</NavLink>
     </li>
 
-    <li>
-      <NavLink className={({ isActive, isPending }) =>
-        isPending ? "pending" : isActive ? "font-bold " : ""}
-        to={'/contact'}
-        style={{ background: 'none' }}>Contact Us</NavLink>
-    </li>
+    
 
     <li>
       {

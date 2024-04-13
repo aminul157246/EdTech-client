@@ -28,7 +28,7 @@ const Vision = () => {
                 <p className="mt-6">Mazim saepe instructior mel ei, sanctus assueverit per at, ad eam veri putent nonumes. Id duo modo quidam maluisset, ut mel tractatos intellegat. Ea electram repudiandae qui. Ea soluta meliore accumsan vel, est veniam populo ea. Mel habeo elitr dissentiunt id, oratio fabulas lobortis te pri.</p>
                 
                 <div className="flex justify-center">
-                <button className="px-5 ml-4 py-3 bg-yellow-400 mt-6 font-semibold">View More</button>
+                <button className="px-5 ml-4 py-3 bg-blue-500 mt-6 font-semibold">View More</button>
                 </div>
             </div> 
         </div>
