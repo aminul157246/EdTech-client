@@ -19,7 +19,7 @@ const CheckoutFrom = () => {
     const [carts, setCart] = useState([])
 
     useEffect(() => {
-        axios.get(`http://localhost:3000/carts?email=${user?.email}`)
+        axios.get(`https://ed-tech-server-five.vercel.app/carts?email=${user?.email}`)
             .then(res => {
                 setCart(res.data);
             })
@@ -33,7 +33,7 @@ const CheckoutFrom = () => {
 
     useEffect(() => {
         if (totalPrice > 0) {
-            axios.post('http://localhost:3000/create-payment-intent', { price: totalPrice })
+            axios.post('https://ed-tech-server-five.vercel.app/create-payment-intent', { price: totalPrice })
                 .then(res => {
                     setClientSecret(res.data.clientSecret);
                 }) 
@@ -99,7 +99,7 @@ const CheckoutFrom = () => {
 
 
 
-                const res = await axios.post('http://localhost:3000/payments', payment);
+                const res = await axios.post('https://ed-tech-server-five.vercel.app/payments', payment);
                 console.log('payment saved', res.data);
                 // refetch();
                 if (res.data?.paymentResult?.insertedId) {

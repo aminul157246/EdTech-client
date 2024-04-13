@@ -9,7 +9,7 @@ const PaymentHistory = () => {
     const { data: payments = [] } = useQuery({
         queryKey: ['payments', user.email],
         queryFn: async () => {
-            const res = await axios.get(`http://localhost:3000/payments/${user.email}`)
+            const res = await axios.get(`https://ed-tech-server-five.vercel.app/payments/${user.email}`)
             return res.data;
         }
     })

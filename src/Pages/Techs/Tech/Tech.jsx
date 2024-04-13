@@ -5,6 +5,7 @@ import axios from 'axios';
 import { AuthContext } from '../../../AuthProvider/AuthProvider';
 
 
+
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';
@@ -40,7 +41,7 @@ const Tech = ({ item }) => {
 
             }
 
-            axios.post('http://localhost:3000/carts', { cartItem })
+            axios.post('https://ed-tech-server-five.vercel.app/carts', { cartItem })
                 .then(res => {
 
                     console.log(res.data);

@@ -16,7 +16,7 @@ const Navbar = () => {
   const [carts, setCart] = useState([])
 
   useEffect(() => {
-    axios.get(`http://localhost:3000/carts?email=${user?.email}`)
+    axios.get(`https://ed-tech-server-five.vercel.app/carts?email=${user?.email}`)
       .then(res => {
         setCart(res.data);
         // console.log(res.data); 
@@ -43,7 +43,7 @@ const Navbar = () => {
         isPending ? "pending" : isActive ? "font-bold" : ""}
         style={{ background: 'none' }} to={"/product"}>My Products</NavLink>
       <div className=" font-bold text-blue-500 p-4  ml-20 -mt-[55px]">
-        <button >+{carts.length}</button>
+        <button >+{carts?.length}</button>
       </div>
     </li>
 

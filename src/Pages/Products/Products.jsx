@@ -12,7 +12,7 @@ const Products = () => {
     const [carts, setCart] = useState([])
 
     useEffect(() => {
-        axios.get(`http://localhost:3000/carts?email=${user?.email}`)
+        axios.get(`https://ed-tech-server-five.vercel.app/carts?email=${user?.email}`)
             .then(res => {
                 setCart(res.data);
             })
@@ -31,7 +31,7 @@ const Products = () => {
                 <Link to={'/payment'}><button className='mt-8 lg:mt-0 md:mt-0  btn btn-primary' >Payment</button></Link>
             </div>
             {
-                carts.map(cart => <div key={cart._id}>
+                carts?.map(cart => <div key={cart._id}>
 
                     <div className="card max-w-5xl mx-auto bg-base-100 shadow-xl  mt-6">
                         <div className="card-body lg:flex-row justify-between ">
