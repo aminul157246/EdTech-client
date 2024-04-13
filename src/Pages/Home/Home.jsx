@@ -14,8 +14,8 @@ const Home = () => {
             <Mission/>
             <Vision/>
              <Count />
-            {/*<Testimonial />
-            <FAQ /> */}
+           <Testimonial />
+             {/*<FAQ /> */}
         </div>
     );
 };
