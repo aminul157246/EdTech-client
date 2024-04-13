@@ -1,6 +1,8 @@
+import { NavLink } from 'react-router-dom';
 import notFound from '../assets/404.jpg'
 const NotFound = () => {
   return (
+    <>
     <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-md w-full space-y-8">
         <div>
@@ -10,8 +12,14 @@ const NotFound = () => {
         <div>
           <img className="mx-auto h-64" src={notFound} alt="404 Not Found" />
         </div>
-      </div>
+      </div> <br />
+      
     </div>
+
+<div className='flex justify-center items-center -mt-24'>
+<NavLink className='bg-blue-400 px-4 py-2' to={'/'}>Go Home</NavLink>
+</div>
+</>
   );
 };
 

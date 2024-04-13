@@ -19,11 +19,14 @@ const Techs = () => {
 
 
     return (
+        <>
+        <h2 className='text-5xl font-bold'>Categories : </h2>
         <div className='grid-cols-1 grid md:grid-cols-2 lg:grid-cols-3 gap-8'>
             {
                 techs.map(tech => <Tech key={tech._id} item={tech}></Tech>)
             }
         </div>
+        </>
     );
 };
 

@@ -36,7 +36,7 @@ const CheckoutFrom = () => {
             axios.post('http://localhost:3000/create-payment-intent', { price: totalPrice })
                 .then(res => {
                     setClientSecret(res.data.clientSecret);
-                })
+                }) 
         }
 
     }, [totalPrice])
@@ -106,9 +106,9 @@ const CheckoutFrom = () => {
                     Swal.fire({
                         position: "top-end",
                         icon: "success",
-                        title: "Thank you for the taka paisa",
+                        title: "Payment Successful",
                         showConfirmButton: false,
-                        timer: 1500
+                        timer: 1000
                     });
                     // navigate('/PaymentHistory')
                 }

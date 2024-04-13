@@ -3,6 +3,11 @@ import bannerImg2 from '../../../assets/edu-tech-2.jpg';
 import bannerImg3 from '../../../assets/edu-tech-3.jpg';
 import bannerImg4 from '../../../assets/edu-tech-4.jpg';
 
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
+
+
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -15,6 +20,17 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 
 const Banner = () => {
+
+
+
+    useEffect(() => {
+        AOS.init({
+             duration: "2000"
+        });
+
+    }, [])
+
+
     return (
         <div>
 
@@ -36,7 +52,7 @@ const Banner = () => {
 
 
                     <div
-                        className="relative h-[60vh] md:h-[60vh] mb-12 lg:h-[90vh]"
+                        className="relative h-[70vh] md:h-[80vh] mb-12 lg:h-[90vh]"
                         style={{
                             backgroundImage: `url(${bannerImg4})`,
                             backgroundRepeat: 'no-repeat',
@@ -46,18 +62,15 @@ const Banner = () => {
                         <div
                             className="absolute inset-0 bg-black opacity-50"
                         ></div>
-                        <div className="absolute top-16 md:top-24 lg:top-48 left-10 md:left-24 lg:left-48 z-10 space-y-3">
-                            <div className="border-l-red-500 border-l-4  text-white"><p className='pl-4'>Weapon in education</p></div>
-                            <h2 className="text-2xl lg:text-6xl font-bold text-white font-Vidaloka">
+                        <div className="absolute top-16 md:top-24 lg:top-48 left-6 md:left-24 lg:left-48 z-10 space-y-3">
+                            <div data-aos="fade-down" className="border-l-red-500 border-l-4  text-white"><p className='pl-4'>Weapon in education</p></div>
+                            <h2 data-aos="zoom-out-right" className="text-xl font-semibold lg:text-6xl lg:font-bold text-white font-Vidaloka">
 
-                                Think out of the box and  <br />
+                                Think out of the box <br /> and  
                                 create a learning learner
                             </h2>
-                            <p className="text-white">
-                                EdTech support student by introducing collaborators outsider, internship  and   research <br />experience abroad
-                                and its takes skills and time to make it all look easy going{" "}
-                            </p>
-                            <button className="bg-blue-500 text-white rounded-3xl px-5 py-3">
+                    
+                            <button data-aos='fade-up' className="bg-blue-500 text-white rounded-3xl px-5 py-3">
                                 Online request
                             </button>
                         </div>
@@ -78,17 +91,17 @@ const Banner = () => {
                             className="absolute inset-0 bg-black opacity-50"
                         ></div>
                         <div className="absolute top-16 md:top-24 lg:top-48 left-10 md:left-24 lg:left-48 z-10 space-y-3">
-                            <div className="border-l-red-500 border-l-4  text-white"><p className='pl-4'>Weapon in education</p></div>
-                            <h2 className="text-2xl lg:text-6xl font-bold text-white font-Vidaloka">
+                            <div data-aos="fade-down" className="border-l-red-500 border-l-4  text-white"><p className='pl-4'>Weapon in education</p></div>
+                            <h2 data-aos="zoom-out-right" className="text-2xl lg:text-6xl font-bold text-white font-Vidaloka">
 
                                 Think out of the box and  <br />
                                 create a learning learner
                             </h2>
-                            <p className="text-white">
+                            <p data-aos="fade-right" className="text-white">
                                 EdTech support student by introducing collaborators outsider, internship  and   research <br />experience abroad
                                 and its takes skills and time to make it all look easy going{" "}
                             </p>
-                            <button className="bg-blue-500 text-white rounded-3xl px-5 py-3">
+                            <button data-aos='fade-up' className="bg-blue-500 text-white rounded-3xl px-5 py-3">
                                 Online request
                             </button>
                         </div>
@@ -108,17 +121,17 @@ const Banner = () => {
                             className="absolute inset-0 bg-black opacity-50"
                         ></div>
                         <div className="absolute top-16 md:top-24 lg:top-48 left-10 md:left-24 lg:left-48 z-10 space-y-3">
-                            <div className="border-l-red-500 border-l-4  text-white"><p className='pl-4'>Weapon in education</p></div>
-                            <h2 className="text-2xl lg:text-6xl font-bold text-white font-Vidaloka">
+                            <div data-aos="fade-down" className="border-l-red-500 border-l-4  text-white"><p className='pl-4'>Weapon in education</p></div>
+                            <h2 data-aos="zoom-out-right" className="text-2xl lg:text-6xl font-bold text-white font-Vidaloka">
 
                                 Think out of the box and  <br />
                                 create a learning learner
                             </h2>
-                            <p className="text-white">
+                            <p data-aos="fade-right" className="text-white">
                                 EdTech support student by introducing collaborators outsider, internship  and   research <br />experience abroad
                                 and its takes skills and time to make it all look easy going{" "}
                             </p>
-                            <button className="bg-blue-500 text-white rounded-3xl px-5 py-3">
+                            <button data-aos='fade-up' className="bg-blue-500 text-white rounded-3xl px-5 py-3">
                                 Online request
                             </button>
                         </div>
@@ -138,17 +151,17 @@ const Banner = () => {
                             className="absolute inset-0 bg-black opacity-50"
                         ></div>
                         <div className="absolute top-16 md:top-24 lg:top-48 left-10 md:left-24 lg:left-48 z-10 space-y-3">
-                            <div className="border-l-red-500 border-l-4  text-white"><p className='pl-4'>Weapon in education</p></div>
-                            <h2 className="text-2xl lg:text-6xl font-bold text-white font-Vidaloka">
+                            <div data-aos="fade-down" className="border-l-red-500 border-l-4  text-white"><p className='pl-4'>Weapon in education</p></div>
+                            <h2 data-aos="zoom-out-right" className="text-2xl lg:text-6xl font-bold text-white font-Vidaloka">
 
                                 Think out of the box and  <br />
                                 create a learning learner
                             </h2>
-                            <p className="text-white">
+                            <p data-aos="fade-right" className="text-white">
                                 EdTech support student by introducing collaborators outsider, internship  and   research <br />experience abroad
                                 and its takes skills and time to make it all look easy going{" "}
                             </p>
-                            <button className="bg-blue-500 text-white rounded-3xl px-5 py-3">
+                            <button data-aos='fade-up' className="bg-blue-500 text-white rounded-3xl px-5 py-3">
                                 Online request
                             </button>
                         </div>
