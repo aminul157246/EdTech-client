@@ -1,6 +1,6 @@
 
-// import AOS from 'aos';
-// import 'aos/dist/aos.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -13,12 +13,12 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 
 const Testimonial = () => {
-    // useEffect(() => {
-    //     AOS.init({
-    //          duration: "1000"
-    //     });
+    useEffect(() => {
+        AOS.init({
+             duration: "1000"
+        });
 
-    // }, [])
+    }, [])
 
 
 
@@ -32,7 +32,7 @@ const Testimonial = () => {
     }, [])
 
     return (
-        <div className='' >
+        <div className='' data-aos="fade-up">
             <Swiper
                 slidesPerView={1}
                 spaceBetween={30}
